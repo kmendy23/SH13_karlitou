@@ -1,0 +1,93 @@
+# Jeu d'enquête SH13
+
+Ce projet est une implémentation en réseau du jeu d'enquête SH13, où les joueurs doivent découvrir le coupable par déduction.
+
+## Installation des dépendances
+
+Pour installer les bibliothèques SDL2 nécessaires sur Linux (Ubuntu/Debian) :
+
+```bash
+sudo apt-get update
+sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
+
+
+## Compilation
+
+Compiler le serveur :
+
+```bash
+make
+```
+
+## Exécution
+
+### Démarrer le serveur :
+
+```bash
+./server <port>
+```
+
+Exemple : `./server 32000`
+
+### Démarrer un client :
+
+```bash
+./sh13 <adresse_ip_serveur> <port_serveur> <adresse_ip_client> <port_client> <nom_joueur>
+```
+
+Exemple : `./sh13 127.0.0.1 32000 127.0.0.1 32001 Joueur1`
+
+Pour lancer plusieurs clients sur une même machine, utilisez des ports différents pour chaque client :
+```bash
+./sh13 127.0.0.1 32000 127.0.0.1 32001 Joueur1
+./sh13 127.0.0.1 32000 127.0.0.1 32002 Joueur2
+./sh13 127.0.0.1 32000 127.0.0.1 32003 Joueur3
+./sh13 127.0.0.1 32000 127.0.0.1 32004 Joueur4
+```
+
+## Comment jouer
+
+1. **Se connecter** : Cliquez sur le bouton "Connect" en haut à gauche de l'interface.
+
+2. **Comprendre l'interface** :
+   - En haut : les 8 symboles différents (pipe, ampoule, poing, etc.)
+   - À gauche : les noms des joueurs
+   - Au centre : la grille montrant quels joueurs possèdent quels symboles
+   - À droite : vos cartes
+   - En bas à gauche : les personnages et leurs symboles associés
+   - En bas à droite : vos déductions (marques X)
+
+3. **Quand c'est votre tour** (bouton "Go" apparaît) :
+
+   **Pour interroger sur un symbole spécifique** :
+   - Cliquez sur un joueur dans la liste de gauche
+   - Cliquez sur un symbole en haut
+   - Cliquez sur "Go"
+   - Tous les joueurs verront la réponse dans la grille centrale
+
+   **Pour faire une observation générale** :
+   - Cliquez sur un symbole en haut (sans sélectionner de joueur)
+   - Cliquez sur "Go"
+   - Les joueurs qui n'ont pas ce symbole seront indiqués
+
+   **Pour accuser un personnage** :
+   - Cliquez sur un des personnages dans la liste du bas
+   - Cliquez sur "Go"
+   - Si vous avez raison, vous gagnez !
+   - Si vous avez tort, c'est au tour du joueur suivant
+
+4. **Déductions** :
+   - Cliquez dans la colonne de droite à côté d'un personnage pour marquer/démarquer un X (vos déductions personnelles)
+
+Le but est de déterminer quel personnage est le coupable en éliminant les suspects grâce aux informations recueillies.
+
+## Règles du jeu
+
+- Chaque joueur possède 3 cartes
+- Le coupable est la 13ème carte (non distribuée)
+- Chaque personnage possède 2 ou 3 symboles caractéristiques
+- À votre tour, vous pouvez soit interroger un autre joueur sur un symbole, soit faire une observation générale, soit accuser un personnage
+- Le premier à accuser correctement le coupable gagne la partie
+
+Bonne enquête !
