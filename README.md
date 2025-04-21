@@ -3,7 +3,9 @@
 Ce projet est une implémentation du jeu "Sherlock Holmes 13" en mode multijoueur, permettant à 4 joueurs de s'affronter dans un jeu de déduction pour trouver le personnage coupable.
 Compilation rapide
 Pour compiler le projet, utilisez simplement:
-bashmake all
+```
+	make all
+```
 ## Exécution rapide
 
 Lancer le serveur (dans un terminal):
