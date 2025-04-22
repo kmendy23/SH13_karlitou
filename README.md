@@ -41,7 +41,10 @@ SDL2 (avec SDL2_image et SDL2_ttf)
 pthread
 ```
 Sur Ubuntu/Debian:
-bashsudo apt-get install gcc make libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
+bash
+sudo apt-get install gcc make libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
 ## Structure du code
 ```
 server.c : Serveur de jeu (logique, communication)
